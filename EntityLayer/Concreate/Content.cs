@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concreate
 {
-   public class Content
+   public class Content:IEntity
     {
         [Key]
         public int ContentId { get; set; }
@@ -20,7 +20,7 @@ namespace EntityLayer.Concreate
         public virtual Heading Heading { get; set; }
 
 
-        public int WriterId { get; set; }
+        public int? WriterId { get; set; }
 
         public virtual Writer Writer { get; set; }
         //ContentYazar
