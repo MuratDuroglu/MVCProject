@@ -14,6 +14,7 @@ namespace DataAccessLayer.Concreate.Repositories
         where TEntity : class, IEntity, new()
         where TContex : DbContext, new()
     {
+      
         public void Add(TEntity entity)
         {
             using (TContex context = new TContex())
@@ -23,9 +24,11 @@ namespace DataAccessLayer.Concreate.Repositories
                 context.Configuration.ProxyCreationEnabled = false;
                 var addedEntity = context.Entry(entity);
                 addedEntity.State = EntityState.Added;
+               
                 context.SaveChanges();
             }
         }
+       
 
         public void Delete(TEntity entity)
         {

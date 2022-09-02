@@ -11,7 +11,7 @@ namespace EntityLayer.Concreate
     {
         [Key]
         public int ContentId { get; set; }
-        [StringLength(1000)]
+        [StringLength(995)]
         public string ContentValue { get; set; }
 
         public DateTime ContentDate { get; set; }

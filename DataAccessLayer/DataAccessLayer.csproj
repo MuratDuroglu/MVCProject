@@ -51,7 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAboutDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\IContactDal.cs" />
+    <Compile Include="Abstract\IContentDal.cs" />
+    <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concreate\ProjectContext.cs" />
     <Compile Include="Concreate\EfCategoryDal.cs" />
     <Compile Include="Concreate\IEntityRepository.cs" />
@@ -59,6 +64,10 @@
     <Compile Include="Migrations\202208300717356_newrelationship.cs" />
     <Compile Include="Migrations\202208300717356_newrelationship.designer.cs">
       <DependentUpon>202208300717356_newrelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209020623211_denee.cs" />
+    <Compile Include="Migrations\202209020623211_denee.designer.cs">
+      <DependentUpon>202209020623211_denee.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,6 +85,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202208300717356_newrelationship.resx">
       <DependentUpon>202208300717356_newrelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209020623211_denee.resx">
+      <DependentUpon>202209020623211_denee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
