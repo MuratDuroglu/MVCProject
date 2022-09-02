@@ -10,7 +10,7 @@ namespace DataAccessLayer.Concreate
 {
   public  class ProjectContext:DbContext
     {
-        public ProjectContext():base("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+        public ProjectContext():base("Data source=MURATDUROGLU;Initial Catalog=DbMVCProje;Integrated Security=true;")
         {
 
         }

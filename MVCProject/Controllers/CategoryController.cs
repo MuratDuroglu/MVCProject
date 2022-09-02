@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using DataAccessLayer.Concreate;
+using EntityLayer.Concreate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,12 @@ namespace MVCProject.Controllers
         public ActionResult Index()
         {
             CategoryManager aa = new CategoryManager(new EfCategoryDal());
-
-          var CC=  aa.GetAll();
+          
+            var n = aa.Get(3);
+            var CC = aa.GetAll();
             return View(CC);
         }
+
+
     }
 }
