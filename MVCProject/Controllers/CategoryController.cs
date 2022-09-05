@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.Concreate;
 using EntityLayer.Concreate;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FluentValidation.Results;
 
 namespace MVCProject.Controllers
 {
@@ -34,9 +36,25 @@ namespace MVCProject.Controllers
         public ActionResult AddNewCategory(Category _category)
         {
             CategoryManager _cmanager = new CategoryManager(new EfCategoryDal());
-            _cmanager.Add(_category);
 
-            return RedirectToAction("Index");
+            CategoryValidator _categoryvalidator = new CategoryValidator();
+
+            ValidationResult result = _categoryvalidator.Validate(_category);
+            if (result.IsValid)
+            {
+                _cmanager.Add(_category); 
+
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+
+            }
+
+            return View();
 
         }
         [HttpGet]
