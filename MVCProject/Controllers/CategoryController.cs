@@ -12,6 +12,7 @@ namespace MVCProject.Controllers
     public class CategoryController : Controller
     {
         // GET: Category
+        CategoryManager _cmanager = new CategoryManager(new EfCategoryDal());
         public ActionResult Index()
         {
             CategoryManager aa = new CategoryManager(new EfCategoryDal());
@@ -23,7 +24,7 @@ namespace MVCProject.Controllers
         }
         public ActionResult CategoryList()
         {
-            CategoryManager _cmanager = new CategoryManager(new EfCategoryDal());
+           
             var listcategory = _cmanager.GetAll();
 
             return View(listcategory);

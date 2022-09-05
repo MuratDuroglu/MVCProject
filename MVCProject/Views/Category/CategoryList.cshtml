@@ -1,17 +1,31 @@
-﻿
+﻿@model IEnumerable<EntityLayer.Concreate.Category>
 @{
     Layout = null;
 }
 
 <!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>CategoryList</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID </th>
+        <th>AD </th>
+        <th>ACIKLAMA </th>
+        <th>DURUM </th>
+
+    </tr>
+
+    @foreach (var item in Model.ToList())
+    {
+        <tr>
+            <td>@item.CategoryId</td>
+            <td>@item.CategoryName</td>
+            <td>@item.CategoryDescription</td>
+            <td>@item.CategoryStatus</td>
+        </tr>
+    }
+</table>
+
+
