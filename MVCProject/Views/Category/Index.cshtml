@@ -9,43 +9,21 @@
 <br/>
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <table class="table table-hover">
+    @foreach (var item in @Model.ToList())
+    {
+      
     <tr>
-        <th>ID</th>
-        <th>Adı</th>
-        <th>Açıklama</th>
-        <th>Durum</th>
-        <th>Güncelle</th>
-
-
+        <th>@item.CategoryId</th>
+        <th>@item.CategoryName</th>
+        <th>@item.CategoryDescription</th>
+        <th>@item.CategoryStatus</th>
+        <th><buton class="btn-danger">Güncelle</buton></th>
     </tr>
-    <tr>
+    }
 
-        <td>1</td>
-        <td>Murat</td>
-        <td>Denemeler</td>
-        <td>True</td>
-        <td><button class="btn btn-success">Güncelle</button></td>
-    </tr>
-    <tr>
-
-        <td>2</td>
-        <td>Murat</td>
-        <td>Denemeler</td>
-        <td>True</td>
-        <td><button class="btn btn-success">Güncelle</button></td>
-    </tr>
-    <tr>
-
-        <td>3</td>
-        <td>Murat</td>
-        <td>Denemeler</td>
-        <td>True</td>
-        <td><button class="btn btn-success">Güncelle</button></td>
-    </tr>
 
 </table>
 
+<br/>
 
-<button class="btn btn-info">YeniKategori</button>
-<button class="btn btn-warning">KategoriListesi</button>
-<button class="btn btn-danger">Kategori Açıklammları</button>
+<a href="/Category/AddNewCategory" class="btn btn-info">YeniCategori</a>

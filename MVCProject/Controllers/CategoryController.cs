@@ -15,10 +15,35 @@ namespace MVCProject.Controllers
         public ActionResult Index()
         {
             CategoryManager aa = new CategoryManager(new EfCategoryDal());
-          
+
             var n = aa.Get(3);
             var CC = aa.GetAll();
             return View(CC);
+
+        }
+        public ActionResult CategoryList()
+        {
+            CategoryManager _cmanager = new CategoryManager(new EfCategoryDal());
+            var listcategory = _cmanager.GetAll();
+
+            return View(listcategory);
+        }
+
+        [HttpPost]
+        public ActionResult AddNewCategory(Category _category)
+        {
+            CategoryManager _cmanager = new CategoryManager(new EfCategoryDal());
+            _cmanager.Add(_category);
+
+            return RedirectToAction("Index");
+
+        }
+        [HttpGet]
+        public ActionResult AddNewCategory()
+        {
+
+            return View();
+
         }
 
 
