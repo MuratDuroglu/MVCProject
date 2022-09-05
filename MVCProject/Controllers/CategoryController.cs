@@ -42,8 +42,9 @@ namespace MVCProject.Controllers
             ValidationResult result = _categoryvalidator.Validate(_category);
             if (result.IsValid)
             {
-                _cmanager.Add(_category); 
+                _cmanager.Add(_category);
 
+                return RedirectToAction("CategoryList");
             }
             else
             {
