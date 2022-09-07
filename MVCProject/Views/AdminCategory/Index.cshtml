@@ -22,7 +22,7 @@
             <td>@item.CategoryId</td>
             <td>@item.CategoryDescription</td>
             
-            <td><a href="#" class="btn btn-danger">Sil</a></td>
+            <td><a href="/AdminCategory/categorydelete/@item.CategoryId" class="btn btn-danger">Sil</a></td>
             <td><a href="#" class="btn btn-warning">Güncelle</a></td>
             <td><a href="#" class="btn btn-primary">Başlıklar</a></td>
         </tr>
@@ -30,4 +30,5 @@
 
 </table>
 <br />
-<a href="/AdminCategory/AddCategory" class="btn btn-success">Yeni Kategori</a>
+<a href="/AdminCategory/AddCategory" class="btn btn-info">Yeni Kategori</a>
+

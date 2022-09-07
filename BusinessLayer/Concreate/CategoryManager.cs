@@ -27,7 +27,7 @@ namespace BusinessLayer
 
         public void Delete(Category category)
         {
-            throw new NotImplementedException();
+            _CategoryDal.Delete(category);
         }
 
         public Category Get(int category)

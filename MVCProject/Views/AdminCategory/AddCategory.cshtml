@@ -10,15 +10,18 @@
     <div class="form-group">
         @Html.Label("KategoriAdı")
         @Html.TextBoxFor(x => x.CategoryName,new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.CategoryName);
+        @Html.ValidationMessageFor(x => x.CategoryName)
         <br />
         <br />
-
-        @Html.Label("Açıklmayı Yazınız");
-        @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" });
-        @Html.ValidationMessageFor(x => x.CategoryDescription);
+            
+        @Html.Label("Açıklamayı Yazınız");
+        @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryDescription)
+        <br />
         <br />
         <button class="btn btn-info">Kaydet </button>
 
     </div>
 }
+
+@Html})

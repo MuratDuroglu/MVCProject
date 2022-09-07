@@ -14,6 +14,9 @@ namespace MVCProject.Controllers
     public class AdminCategoryController : Controller
     {
         CategoryManager categorymanager = new CategoryManager(new EfCategoryDal());
+
+        CategoryValidator categoryvalidator = new CategoryValidator();
+
         public ActionResult Index()
         {
             var categorylist = categorymanager.GetAll();
@@ -21,13 +24,23 @@ namespace MVCProject.Controllers
             return View(categorylist);
         }
 
-       
+
+        [HttpGet]
+
+        public ActionResult AddCategory()
+        {
+
+            return View();
+
+        }
+
+
+        [HttpPost]
         public ActionResult AddCategory(Category category)
         {
-            
-
-            CategoryValidator categoryvalidator = new CategoryValidator();
             ValidationResult result = categoryvalidator.Validate(category);
+
+
             if (result.IsValid)
             {
                 categorymanager.Add(category);
@@ -39,10 +52,24 @@ namespace MVCProject.Controllers
                 {
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
-                
+
             }
             return View();
         }
 
+        public ActionResult categorydelete(int Id)
+        {
+            var willdelete = categorymanager.Get(Id);
+            categorymanager.Delete(willdelete);
+
+
+
+            return RedirectToAction("Index");
+
+        }
     }
+
+
+
+
 }
