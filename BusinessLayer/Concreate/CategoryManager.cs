@@ -25,6 +25,11 @@ namespace BusinessLayer
             _CategoryDal.Add(category);
         }
 
+        public void CategoryUpdate(Category category)
+        {
+            _CategoryDal.Update(category);
+        }
+
         public void Delete(Category category)
         {
             _CategoryDal.Delete(category);

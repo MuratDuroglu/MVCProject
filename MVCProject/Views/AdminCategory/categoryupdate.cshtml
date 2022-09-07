@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concreate.Category
+@{
+    ViewBag.Title = "categoryupdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>categoryupdate</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>KategoriAdı</th>
+        <th>KategoriAçıklaması</th>
+        <th>KategorDurumu</th>
+    </tr>
+<tr>
+
+    @Model.CategoryId
+
+
+</tr>
+<tr>
+    @Model.CategoryDescription
+</tr>
+
+</table>

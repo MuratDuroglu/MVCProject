@@ -67,6 +67,22 @@ namespace MVCProject.Controllers
             return RedirectToAction("Index");
 
         }
+     [HttpPost]
+        public ActionResult categoryupdate(int gelencategoryId)
+        {
+            var willupdate = categorymanager.Get(gelencategoryId);
+
+            return View(willupdate);
+
+        }
+        [HttpGet]
+        public ActionResult categoryupdate()
+        {
+            //var willupdate = categorymanager.Get(gelencategoryId);
+
+            return View();
+
+        }
     }
 
 

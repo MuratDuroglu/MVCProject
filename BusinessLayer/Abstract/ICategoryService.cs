@@ -20,6 +20,8 @@ namespace BusinessLayer.Abstract
 
         List<Category> GetAll();
 
+        void CategoryUpdate(Category category);
+
 
     }
 }
