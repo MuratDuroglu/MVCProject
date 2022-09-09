@@ -6,21 +6,29 @@
 
 <h2>categoryupdate</h2>
 
-<table class="table table-bordered">
-    <tr>
-        <th>Id</th>
-        <th>KategoriAdı</th>
-        <th>KategoriAçıklaması</th>
-        <th>KategorDurumu</th>
-    </tr>
-<tr>
+@using (Html.BeginForm("categoryupdate", "AdminCategory", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Kategori ID")
+    @Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryId)
 
-    @Model.CategoryId
+    <br />
+    <br />
+    @Html.Label("KategoriAdı")
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryName)
+    <br/>
+    <br/>
+    <br/>
 
+    @Html.Label("KategoriAçıklaması")
+    @Html.TextAreaFor(x => x.CategoryDescription, new {@class="form-control"})
 
-</tr>
-<tr>
-    @Model.CategoryDescription
-</tr>
+    <br/>
+    <br/>
+    <button class="btn btn-success">Güncelle</button>
 
-</table>
+</div>
+
+}

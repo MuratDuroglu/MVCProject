@@ -1,0 +1,32 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Writer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>YazarAdı</th>
+        <th>Yazar Soyadı</th>
+        <th>Mail</th>
+    </tr>
+    @foreach (var item in Model.ToList())
+    {
+        <tr>
+
+            <td>@item.WriterId</td>
+            <td>@item.WriterName</td>
+            <td>@item.WriterSurname</td>
+            <td>@item.WriterMail</td>
+
+        
+
+
+
+        </tr>
+    }
+
+    </table>

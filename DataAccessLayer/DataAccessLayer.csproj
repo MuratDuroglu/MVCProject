@@ -57,6 +57,7 @@
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
+    <Compile Include="Concreate\EfWriterDal.cs" />
     <Compile Include="Concreate\ProjectContext.cs" />
     <Compile Include="Concreate\EfCategoryDal.cs" />
     <Compile Include="Concreate\IEntityRepository.cs" />
