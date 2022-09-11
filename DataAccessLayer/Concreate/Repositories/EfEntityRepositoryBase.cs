@@ -18,10 +18,10 @@ namespace DataAccessLayer.Concreate.Repositories
         public void Add(TEntity entity)
         {
             using (TContex context = new TContex())
-            { 
-                context.Configuration.AutoDetectChangesEnabled = false;
-                context.Configuration.LazyLoadingEnabled = false;
-                context.Configuration.ProxyCreationEnabled = false;
+            {
+                //context.Configuration.AutoDetectChangesEnabled = false;
+                //context.Configuration.LazyLoadingEnabled = false;
+                //context.Configuration.ProxyCreationEnabled = false;
                 var addedEntity = context.Entry(entity);
                 addedEntity.State = EntityState.Added;
                
@@ -34,8 +34,8 @@ namespace DataAccessLayer.Concreate.Repositories
         {
             using (TContex context = new TContex())
             {
-                context.Configuration.AutoDetectChangesEnabled = false;
-                context.Configuration.LazyLoadingEnabled = false;
+                //context.Configuration.AutoDetectChangesEnabled = false;
+                //context.Configuration.LazyLoadingEnabled = false;
                 context.Configuration.ProxyCreationEnabled = false;
                 var deletedEntity = context.Entry(entity);
                 deletedEntity.State = EntityState.Deleted;
@@ -58,8 +58,8 @@ namespace DataAccessLayer.Concreate.Repositories
         {
             using (TContex context = new TContex())
             {
-                context.Configuration.AutoDetectChangesEnabled = false;
-                context.Configuration.LazyLoadingEnabled = false;
+                context.Configuration.AutoDetectChangesEnabled = true;
+                context.Configuration.LazyLoadingEnabled = true;
                 context.Configuration.ProxyCreationEnabled = false;
                 return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
             }
@@ -69,8 +69,8 @@ namespace DataAccessLayer.Concreate.Repositories
         {
             using (TContex context = new TContex())
             {
-                context.Configuration.AutoDetectChangesEnabled = false;
-                context.Configuration.LazyLoadingEnabled = false;
+                //context.Configuration.AutoDetectChangesEnabled = false;
+                //context.Configuration.LazyLoadingEnabled = false;
                 context.Configuration.ProxyCreationEnabled = false;
                 var updatedEntity = context.Entry(entity);
                 updatedEntity.State = EntityState.Modified;

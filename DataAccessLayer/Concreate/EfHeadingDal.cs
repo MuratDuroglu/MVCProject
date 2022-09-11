@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concreate
 {
-  public  class EfHeadingDal:EfEntityRepositoryBase<Heading,ProjectContext>,IHeadingDal
+    public class EfHeadingDal : EfEntityRepositoryBase<Heading, ProjectContext>, IHeadingDal
     {
+       
     }
 }
