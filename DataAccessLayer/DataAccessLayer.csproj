@@ -57,6 +57,7 @@
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
+    <Compile Include="Concreate\EfHeadingDal.cs" />
     <Compile Include="Concreate\EfWriterDal.cs" />
     <Compile Include="Concreate\ProjectContext.cs" />
     <Compile Include="Concreate\EfCategoryDal.cs" />
@@ -73,6 +74,10 @@
     <Compile Include="Migrations\202209091429100_WriterAbout.cs" />
     <Compile Include="Migrations\202209091429100_WriterAbout.designer.cs">
       <DependentUpon>202209091429100_WriterAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209101428533_writertirle.cs" />
+    <Compile Include="Migrations\202209101428533_writertirle.designer.cs">
+      <DependentUpon>202209101428533_writertirle.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209091429100_WriterAbout.resx">
       <DependentUpon>202209091429100_WriterAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209101428533_writertirle.resx">
+      <DependentUpon>202209101428533_writertirle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

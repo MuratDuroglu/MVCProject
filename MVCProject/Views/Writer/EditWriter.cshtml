@@ -13,8 +13,8 @@
 <div class=" form-group">
 
     @Html.Label("YazarId")
-     @Html.TextBoxFor(x => x.WriterId, new { @class = "form-control" })
-   
+    @Html.TextBoxFor(x => x.WriterId, new { @class = "form-control" })
+
     <br />
 
     @Html.Label("YazarAdı")
@@ -41,6 +41,10 @@
     @Html.Label("YazarGörselLinki")
     @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.WriterImage)
+    <br />
+    @Html.Label("Unvan")
+    @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterTitle)
     <br />
 
     @Html.Label("YazarHakkında")

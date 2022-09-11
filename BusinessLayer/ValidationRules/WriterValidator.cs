@@ -16,6 +16,7 @@ namespace BusinessLayer.ValidationRules
             RuleFor(x => x.WriterName).NotEmpty().WithMessage("Yazar adını boş geçemezsiniz");
             RuleFor(x => x.WriterAbout).NotEmpty().WithMessage("Hakkında alanını boş geçemezsiniz");
             RuleFor(x => x.WriterSurname).NotEmpty().WithMessage("Soyadını boş geçemezsiniz");
+            RuleFor(x => x.WriterTitle).NotEmpty().WithMessage("Unvan kısmını boş geçemezsiniz");
             RuleFor(x => x.WriterSurname).NotEmpty().WithMessage("Soyadını boş geçemezsiniz");
          
 

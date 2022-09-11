@@ -33,6 +33,11 @@
     @Html.ValidationMessageFor(x => x.WriterPassword)
 
     <br />
+    @Html.Label("YazarUnvan")
+    @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterTitle)
+
+    <br />
 
     @Html.Label("YazarGörselLinki")
     @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
