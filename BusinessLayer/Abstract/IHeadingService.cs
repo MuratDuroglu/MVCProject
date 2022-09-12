@@ -17,6 +17,7 @@ namespace BusinessLayer.Abstract
 
         Heading Get(int _heading);
 
+        List<Heading> Include();
 
         List<Heading> GetAll();
 

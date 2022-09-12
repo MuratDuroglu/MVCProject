@@ -9,6 +9,8 @@ namespace EntityLayer.Concreate
 {
   public  class Category: IEntity
     {
+     
+
         [Key]
         public int CategoryId { get; set; }
         [StringLength(50)]

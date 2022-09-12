@@ -79,6 +79,10 @@
     <Compile Include="Migrations\202209101428533_writertirle.designer.cs">
       <DependentUpon>202209101428533_writertirle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202209121000003_aa.cs" />
+    <Compile Include="Migrations\202209121000003_aa.designer.cs">
+      <DependentUpon>202209121000003_aa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -104,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209101428533_writertirle.resx">
       <DependentUpon>202209101428533_writertirle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209121000003_aa.resx">
+      <DependentUpon>202209121000003_aa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

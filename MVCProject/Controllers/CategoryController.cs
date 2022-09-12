@@ -18,7 +18,7 @@ namespace MVCProject.Controllers
         public ActionResult Index()
         {
             CategoryManager aa = new CategoryManager(new EfCategoryDal());
-
+           
             var n = aa.Get(3);
             var CC = aa.GetAll();
             return View(CC);

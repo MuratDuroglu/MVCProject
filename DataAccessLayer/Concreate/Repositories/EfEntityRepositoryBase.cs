@@ -14,7 +14,9 @@ namespace DataAccessLayer.Concreate.Repositories
         where TEntity : class, IEntity, new()
         where TContex : DbContext, new()
     {
-      
+        TContex context = new TContex();
+
+
         public void Add(TEntity entity)
         {
             using (TContex context = new TContex())
@@ -56,13 +58,12 @@ namespace DataAccessLayer.Concreate.Repositories
 
         public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
         {
-            using (TContex context = new TContex())
-            {
-                context.Configuration.AutoDetectChangesEnabled = true;
-                context.Configuration.LazyLoadingEnabled = true;
-                context.Configuration.ProxyCreationEnabled = false;
-                return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
-            }
+
+            //context.Configuration.AutoDetectChangesEnabled = true;
+            //context.Configuration.LazyLoadingEnabled = true;
+            //context.Configuration.ProxyCreationEnabled = false;
+            return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
+            
         }
 
         public void Update(TEntity entity)

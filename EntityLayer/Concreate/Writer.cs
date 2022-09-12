@@ -9,6 +9,10 @@ namespace EntityLayer.Concreate
 {
     public class Writer:IEntity
     {
+        public Writer()
+        {
+
+        }
         [Key]
         public int WriterId { get; set; }
         [StringLength(50)]

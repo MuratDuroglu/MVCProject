@@ -42,5 +42,10 @@ namespace BusinessLayer.Concreate
         {
             return _headingdal.GetAll();
         }
+
+        public List<Heading> Include()
+        {
+            return _headingdal.Include();
+        }
     }
 }

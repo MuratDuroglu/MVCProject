@@ -14,35 +14,35 @@ namespace MVCProject.Controllers
     {
         // GET: Heding
         HeadingManager _hmanager = new HeadingManager(new EfHeadingDal());
-
-
+        WriterManager _wmanager = new WriterManager(new EfWriterDal());
         CategoryManager _cmanager = new CategoryManager(new EfCategoryDal());
+
         public ActionResult Index()
         {
             var headinglist = _hmanager.GetAll();
 
-            using (var db = new ProjectContext())
-            {
-
-                var model = db.Headings.Include(x => x.Category).ToList();
 
 
 
-                //var result = (from x in _hmanager.GetAll()
-                //              join y in _cmanager.GetAll() on x.CategoryId equals y.CategoryId
-                //              select new
-                //              {
-                //                  x.HeadingId,
-                //                  x.HeadingName,
-                //                  x.HeadingDate,
-                //                  y.CategoryId,
-                //                  y.CategoryName
 
-                //              }).ToList();
+            var result = (from x in _hmanager.GetAll()
+                          join y in _cmanager.GetAll() 
+                          on
+                          x.CategoryId equals y.CategoryId
+                      
+                          select new
+                          {
+                              HeadingId=x.HeadingId,
+                              HeadingName=x.HeadingName,
+                              HeadingDate=x.HeadingDate,
+                              CategoryId=y.CategoryName,
+                              WriterId = x.WriterId
+                          
+                          }).ToList();
+         
+           
+            return View(result);
 
-                
-                return View(model);
-            }
         }
     }
 }
